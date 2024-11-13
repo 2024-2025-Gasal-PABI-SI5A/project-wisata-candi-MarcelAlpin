@@ -142,16 +142,21 @@ class DetailScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const SizedBox(
+                        height: 8,
+                      ),
                       Divider(
                         color: Colors.deepPurple.shade100,
                       ),
                       const SizedBox(
-                        height: 8,
+                        height: 16,
                       ),
-                      Text(
+                      const Text(
                         'Galeri',
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
@@ -163,21 +168,23 @@ class DetailScreen extends StatelessWidget {
                             itemCount: candi.imageUrls.length,
                             itemBuilder: (context, index) {
                               return Padding(
-                                padding: EdgeInsets.only(left: 8),
+                                padding: const EdgeInsets.only(right: 8),
                                 child: GestureDetector(
                                   onTap: () {},
                                   child: Container(
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(12),
-                                        border: Border.all(
-                                            color: Colors.deepPurple.shade100,
-                                            width: 10)),
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(
+                                        color: Colors.deepPurple.shade100,
+                                        width: 2,
+                                      ),
+                                    ),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
                                       child: CachedNetworkImage(
                                         imageUrl: candi.imageUrls[index],
-                                        width: 120,
                                         height: 120,
+                                        width: 120,
                                         fit: BoxFit.cover,
                                         placeholder: (context, url) =>
                                             Container(
@@ -186,7 +193,7 @@ class DetailScreen extends StatelessWidget {
                                           color: Colors.deepPurple[50],
                                         ),
                                         errorWidget: (context, url, error) =>
-                                            Icon(Icons.error),
+                                            const Icon(Icons.error),
                                       ),
                                     ),
                                   ),
@@ -197,10 +204,10 @@ class DetailScreen extends StatelessWidget {
                       const SizedBox(
                         height: 4,
                       ),
-                      Text(
-                        'Tap Untuk Memperbesar',
+                      const Text(
+                        'Tap untuk memperbesar',
                         style: TextStyle(fontSize: 12, color: Colors.black54),
-                      )
+                      ),
                     ],
                   ))
             ],
